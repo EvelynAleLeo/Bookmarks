@@ -5,5 +5,9 @@ class BookmarkManager < Sinatra::Base
     "Bookmark Manager"
   end
 
+  get '/bookmarks' do
+    "Bookmark"
+  end
+
   run! if app_file == $0
 end

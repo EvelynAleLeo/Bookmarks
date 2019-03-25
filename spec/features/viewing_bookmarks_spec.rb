@@ -5,3 +5,10 @@ feature 'View bookmarks' do
     expect(page).to have_content "Bookmark Manager"
   end
 end
+
+feature 'View saved bookmarks' do
+  scenario 'View the stored bookmarks' do
+    visit ('/bookmarks')
+    expect(page).to have_content "Bookmark"
+  end
+end
