@@ -9,6 +9,8 @@ end
 feature 'View saved bookmarks' do
   scenario 'View the stored bookmarks' do
     visit ('/bookmarks')
-    expect(page).to have_content "Bookmark"
+    expect(page).to have_content "https://www.google.com"
+    expect(page).to have_content "https://www.facebook.com"
+    expect(page).to have_content "https://www.twitter.com"
   end
 end
