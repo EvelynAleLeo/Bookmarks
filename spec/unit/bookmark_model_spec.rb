@@ -2,11 +2,12 @@ require 'bookmark_model'
 
 describe Bookmark do
 
-  subject(:bookmark) { described_class } 
-
   it '#all returns all the bookmarks' do
+    bookmarks = Bookmark.all
 
-    expect(bookmark.all).to eq ['https://www.google.com', 'https://www.facebook.com', 'https://www.twitter.com']
+    expect(bookmarks).to include 'http://www.google.com'
+    expect(bookmarks).to include 'http://www.destroyallsoftware.com'
+    expect(bookmarks).to include 'http://www.makersacademy.com'
   end
 
 end

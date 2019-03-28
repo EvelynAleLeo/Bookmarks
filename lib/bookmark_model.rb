@@ -1,7 +1,21 @@
+require 'pg'
+
 class Bookmark
   
   def self.all
-    ['https://www.google.com', 'https://www.facebook.com', 'https://www.twitter.com']
+    con = PG.connect :dbname => 'bookmark_manager', :user => 'evelynblazquez'
+    
+    rs = con.exec "SELECT * FROM bookmarks"
+    
+    result = []
+    rs.each do |row|
+      result << row['url']
+    end
+
+    rs.clear if rs
+    con.close if con
+    
+    return result
   end
 
 end
